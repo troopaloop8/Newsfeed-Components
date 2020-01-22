@@ -112,3 +112,59 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function divCreator (info) {
+
+  // create elements
+  let article = document.createElement('div');
+  let title = document.createElement('h2');
+  let date = document.createElement('p');
+  let para1 = document.createElement('p');
+  let para2 = document.createElement('p');
+  let para3 = document.createElement('p');
+  let spanBtn = document.createElement('span');
+
+  // append elements to create div structure
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(spanBtn);
+
+  // set class names
+  article.classList.add('article');
+  date.classList.add('date');
+  spanBtn.classList.add('expandButton');
+
+  // event listener for expand button
+  spanBtn.addEventListener('click', (event) => {
+    article.classList.toggle("article-open");
+    
+  })
+
+  // add content
+  title.textContent = info.title;
+  date.textContent = info.date;
+  para1.textContent = info.firstParagraph;
+  para2.textContent = info.secondParagraph;
+  para3.textContent = info.thirdParagraph;
+  spanBtn.textContent = "EXPAND";
+  
+  
+  return article;
+
+};
+
+const mainContent = document.querySelector('.articles');
+
+let divArray = data.map( (i) => {
+  let array = divCreator(i);
+  return array;
+})
+
+divArray.forEach( (i) => {
+  mainContent.appendChild(i);
+})
+
+
