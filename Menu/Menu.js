@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out"
 ];
 
 /* 
@@ -33,3 +33,35 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function menuCreator(items) {
+  //create elements
+  const menuDiv = document.createElement("div");
+  const uList = document.createElement("ul");
+  const menuButton = document.querySelector(".menu-button");
+
+  //append elements to make tree like structure
+  menuDiv.appendChild(uList);
+
+  //set class name
+  menuDiv.classList.add("menu");
+
+  //function to create li's and their content based on the array items fed to the menu div
+  items.forEach(i => {
+    let li = document.createElement("li");
+    li.textContent = i;
+    uList.appendChild(li);
+  });
+
+  //event listener to open/close menu
+
+  menuButton.addEventListener("click", event => {
+    menuDiv.classList.toggle("menu--open");
+  });
+
+  return menuDiv;
+}
+
+const header = document.querySelector(".header");
+
+header.appendChild(menuCreator(menuItems));

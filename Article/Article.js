@@ -3,7 +3,7 @@
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
-    date: 'Nov 5th, 2018',
+    date: "Nov 5th, 2018",
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
         watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
@@ -23,8 +23,8 @@ const data = [
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   },
   {
-    title: 'Javascript and You, ES6',
-    date: 'May 7th, 2019',
+    title: "Javascript and You, ES6",
+    date: "May 7th, 2019",
     firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
         Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
         snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
@@ -43,8 +43,8 @@ const data = [
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
-    title: 'React vs Angular vs Vue',
-    date: 'June 7th, 2019',
+    title: "React vs Angular vs Vue",
+    date: "June 7th, 2019",
     firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
@@ -71,8 +71,8 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
-    title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
+    title: "Professional Software Development in 2019",
+    date: "Jan 1st, 2019",
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
@@ -85,6 +85,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Playing With components is FUN!",
+    date: "Jan 22nd, 2020",
+    firstParagraph: `Lorem ipsum dolor amet vinyl four loko bespoke retro pug cliche skateboard blog kickstarter drinking vinegar sustainable chicharrones. 
+    Chillwave wolf copper mug kale chips kinfolk raclette. Venmo waistcoat helvetica food truck, aesthetic shoreditch cray 8-bit. 
+    Lomo polaroid cred venmo 90's. Snackwave four dollar toast air plant vinyl banjo, cornhole mustache microdosing kale chips 
+    blue bottle hella shoreditch. `,
+
+    secondParagraph: `Forage freegan portland paleo tacos. Glossier cardigan ugh paleo shoreditch williamsburg deep v skateboard flexitarian truffaut. 
+    Cliche biodiesel chambray ramps knausgaard quinoa. Mumblecore chicharrones palo santo affogato farm-to-table raw denim semiotics 
+    man braid fashion axe. `,
+
+    thirdParagraph: `Schlitz celiac tote bag, put a bird on it microdosing polaroid selvage. Next level taxidermy hot chicken street art. Vape franzen 
+    neutra chicharrones pug austin before they sold out slow-carb you probably haven't heard of them umami man bun keytar schlitz. Heirloom tumeric 
+    actually occupy celiac umami. Seitan chicharrones copper mug, lumbersexual pug tumblr prism fingerstache.`
   }
 ];
 
@@ -113,16 +129,15 @@ const data = [
 
 */
 
-function divCreator (info) {
-
+function divCreator(info) {
   // create elements
-  let article = document.createElement('div');
-  let title = document.createElement('h2');
-  let date = document.createElement('p');
-  let para1 = document.createElement('p');
-  let para2 = document.createElement('p');
-  let para3 = document.createElement('p');
-  let spanBtn = document.createElement('span');
+  let article = document.createElement("div");
+  let title = document.createElement("h2");
+  let date = document.createElement("p");
+  let para1 = document.createElement("p");
+  let para2 = document.createElement("p");
+  let para3 = document.createElement("p");
+  let spanBtn = document.createElement("span");
 
   // append elements to create div structure
   article.appendChild(title);
@@ -133,15 +148,14 @@ function divCreator (info) {
   article.appendChild(spanBtn);
 
   // set class names
-  article.classList.add('article');
-  date.classList.add('date');
-  spanBtn.classList.add('expandButton');
+  article.classList.add("article");
+  date.classList.add("date");
+  spanBtn.classList.add("expandButton");
 
   // event listener for expand button
-  spanBtn.addEventListener('click', (event) => {
+  spanBtn.addEventListener("click", event => {
     article.classList.toggle("article-open");
-    
-  })
+  });
 
   // add content
   title.textContent = info.title;
@@ -150,21 +164,17 @@ function divCreator (info) {
   para2.textContent = info.secondParagraph;
   para3.textContent = info.thirdParagraph;
   spanBtn.textContent = "EXPAND";
-  
-  
+
   return article;
+}
 
-};
+const mainContent = document.querySelector(".articles");
 
-const mainContent = document.querySelector('.articles');
-
-let divArray = data.map( (i) => {
+let divArray = data.map(i => {
   let array = divCreator(i);
   return array;
-})
+});
 
-divArray.forEach( (i) => {
+divArray.forEach(i => {
   mainContent.appendChild(i);
-})
-
-
+});
